@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class SwitchButton {
+        status;
+        constructor(status) {
+            this.status = status;
+        }
+        SwitchOff () {
+            return false;
+        }
+        SwitchOn () {
+            return true;
+        }
+    }
+    class ElectricLamp {
+        status;
+        swictch;
+        constructor(status,swictch) {
+            this.status = status;
+            this.swictch = swictch;
+        }
+        TurnOff (SwitchButton) {
+            SwitchButton.SwitchOff();
+            alert('Đèn đang tắt')
+        }
+        TurnOn (SwitchButton) {
+            SwitchButton.SwitchOn();
+            alert('Đèn đang bật')
+        }
+
+    }
+    let CongTac1 = new SwitchButton();
+    let Lamp1 = new ElectricLamp();
+    function LampOnOff() {
+        Lamp1.TurnOn(CongTac1);
+        Lamp1.TurnOff(CongTac1);
+    }
+    for (let i=1;i<11;i++) {
+        LampOnOff();
+        alert('Đèn OnOff lần thứ : ' + i )
+    }
+
+</script>
